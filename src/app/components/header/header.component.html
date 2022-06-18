@@ -17,11 +17,13 @@
     >
       <ul class="nav navbar-nav">
         <li><a href="#" (click)="onSelect('recipe')">Recipes</a></li>
-        <li><a href="#" (click)="onSelect('shopping-list')">Shopping list</a></li>
+        <li>
+          <a href="#" (click)="onSelect('shopping-list')">Shopping list</a>
+        </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li class="dropdown">
-          <a href="" class="dropdown-toggle" role="button"
+        <li class="dropdown" appDropdown>
+          <a href="#" class="dropdown-toggle" role="button"
             >Manage <span class="caret"></span
           ></a>
           <ul class="dropdown-menu">
