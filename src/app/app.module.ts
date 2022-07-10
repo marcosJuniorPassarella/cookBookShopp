@@ -12,6 +12,7 @@ import { ShoppingEditComponent } from './components/shopping-list/shopping-edit/
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { DropdownDirective } from './components/shared/dropdown.directive';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,7 @@ import { DropdownDirective } from './components/shared/dropdown.directive';
     ShoppingEditComponent,
     DropdownDirective,
   ],
-  imports: [CommonModule, BrowserModule, FormsModule],
+  imports: [CommonModule, BrowserModule, FormsModule, AppRoutingModule],
   providers: [],
   bootstrap: [AppComponent],
 })
