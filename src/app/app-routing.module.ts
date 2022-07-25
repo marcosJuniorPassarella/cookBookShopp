@@ -4,6 +4,7 @@ import { RecipesComponent } from './components/recipes/recipes.component';
 import { ShoppingListComponent } from './components/shopping-list/shopping-list.component';
 import { RecipesStartComponent } from './components/recipes/recipes-start/recipes-start.component';
 import { RecipesDetailComponent } from './components/recipes/recipes-detail/recipes-detail.component';
+import { RecipesEditComponent } from './components/recipes/recipes-edit/recipes-edit.component';
 
 const appRoutes: Routes = [
   {
@@ -20,8 +21,16 @@ const appRoutes: Routes = [
         component: RecipesStartComponent,
       },
       {
+        path: 'new',
+        component: RecipesEditComponent,
+      },
+      {
         path: ':id',
         component: RecipesDetailComponent,
+      },
+      {
+        path: ':id/edit',
+        component: RecipesEditComponent,
       },
     ],
   },
