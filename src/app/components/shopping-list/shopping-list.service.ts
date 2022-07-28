@@ -5,6 +5,7 @@ import { Ingredient } from '../shared/ingredients.model';
 @Injectable({ providedIn: 'root' })
 export class ShoppingListService {
   ingredientsChanged = new Subject<Ingredient[]>();
+  startedEditing = new Subject<number>();
   private ingredients: Ingredient[] = [
     new Ingredient('Maças', 5),
     new Ingredient('Laranjas', 7),
