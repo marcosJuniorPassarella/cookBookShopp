@@ -33,4 +33,9 @@ export class ShoppingListService {
     this.ingredients[index] = newIngredient;
     this.ingredientsChanged.next(this.ingredients.slice());
   }
+
+  deleteIngredient(index: number): void {
+    this.ingredients.splice(index, 1); // exclui o item do array no índice informado
+    this.ingredientsChanged.next(this.ingredients.slice());
+  }
 }
