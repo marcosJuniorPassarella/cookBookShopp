@@ -10,7 +10,7 @@ import { RecipesItemComponent } from './components/recipes/recipes-list/recipes-
 import { ShoppingListComponent } from './components/shopping-list/shopping-list.component';
 import { ShoppingEditComponent } from './components/shopping-list/shopping-edit/shopping-edit.component';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DropdownDirective } from './components/shared/dropdown.directive';
 import { AppRoutingModule } from './app-routing.module';
 import { RecipesStartComponent } from './components/recipes/recipes-start/recipes-start.component';
@@ -30,7 +30,13 @@ import { RecipesEditComponent } from './components/recipes/recipes-edit/recipes-
     RecipesStartComponent,
     RecipesEditComponent,
   ],
-  imports: [CommonModule, BrowserModule, FormsModule, AppRoutingModule],
+  imports: [
+    CommonModule,
+    BrowserModule,
+    FormsModule,
+    AppRoutingModule,
+    ReactiveFormsModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })
