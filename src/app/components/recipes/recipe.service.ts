@@ -9,16 +9,16 @@ export class RecipeService {
 
   private recipes: Recipe[] = [
     new Recipe(
-      'A test recipe',
-      'this is simply a test',
-      'http://cdn.pixabay.com/photo/2016/06/15/19/09/food-145964_960_720.jpg',
-      [new Ingredient('Meat', 1)]
+      'Spaguetti',
+      'Its a great and simple food',
+      'https://upload.wikimedia.org/wikipedia/commons/2/2a/Spaghetti_al_Pomodoro.JPG',
+      [new Ingredient('Spaguetti', 1)]
     ),
     new Recipe(
-      'A test recipe',
-      'this is simply a test',
-      'http://cdn.pixabay.com/photo/2016/06/15/19/09/food-145964_960_720.jpg',
-      [new Ingredient('Meat', 2)]
+      'Appetizers',
+      'Its a simple appetizers recipe',
+      'https://upload.wikimedia.org/wikipedia/commons/e/ed/Food_at_WikiCuritiba_March_2012-15.jpg',
+      [new Ingredient('Salsicha', 3)]
     ),
   ];
 
