@@ -3,7 +3,8 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  firebaseUrl: 'https://recipe-book-course-a2e6d-default-rtdb.firebaseio.com/recipes.json',
 };
 
 /*
