@@ -16,6 +16,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { RecipesStartComponent } from './components/recipes/recipes-start/recipes-start.component';
 import { RecipesEditComponent } from './components/recipes/recipes-edit/recipes-edit.component';
 import { AuthComponent } from './auth/auth/auth.component';
+import { LoadingSpinnerComponent } from './shared/components/loading-spinner/loading-spinner.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { AuthComponent } from './auth/auth/auth.component';
     RecipesStartComponent,
     RecipesEditComponent,
     AuthComponent,
+    LoadingSpinnerComponent,
   ],
   imports: [
     CommonModule,
