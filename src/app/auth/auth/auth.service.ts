@@ -9,6 +9,7 @@ export interface AuthResponseData {
   refreshToken: string;
   expiresIn: string;
   localId: string;
+  registered?: boolean;
 }
 
 @Injectable({
@@ -16,6 +17,7 @@ export interface AuthResponseData {
 })
 export class AuthService {
   private signUpUrl = environment.signUpUrl;
+  private sigInUrl = environment.signInUrl;
 
   constructor(private http: HttpClient) {}
 
@@ -39,5 +41,13 @@ export class AuthService {
           return throwError(() => new Error(errorMessage));
         })
       );
+  }
+
+  login(email: string, password: string): Observable<AuthResponseData> {
+    return this.http.post<AuthResponseData>(this.sigInUrl, {
+      email: email,
+      password: password,
+      returnSecureToken: true,
+    });
   }
 }
