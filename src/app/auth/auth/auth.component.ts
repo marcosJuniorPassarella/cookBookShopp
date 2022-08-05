@@ -9,6 +9,8 @@ import { AuthService } from './auth.service';
 })
 export class AuthComponent implements OnInit {
   isLoginMode = true;
+  isLoading = false;
+  error: string = null;
 
   constructor(private authService: AuthService) {}
 
@@ -25,12 +27,19 @@ export class AuthComponent implements OnInit {
     const { email } = form.value;
     const { password } = form.value;
 
+    this.isLoading = true;
     if (this.isLoginMode) {
       //....
     } else {
       this.authService.signUp(email, password).subscribe({
-        next: (res) => console.log(res),
-        error: (err) => console.log(err),
+        next: (res) => {
+          console.log(res);
+          this.isLoading = false;
+        },
+        error: (err) => {
+          this.error = err;
+          this.isLoading = false;
+        },
       });
     }
     form.reset();
