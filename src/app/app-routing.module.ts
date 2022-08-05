@@ -6,7 +6,7 @@ import { RecipesStartComponent } from './components/recipes/recipes-start/recipe
 import { RecipesDetailComponent } from './components/recipes/recipes-detail/recipes-detail.component';
 import { RecipesEditComponent } from './components/recipes/recipes-edit/recipes-edit.component';
 import { RecipesResolverService } from './components/recipes/recipes-resolver.service';
-import { AuthComponent } from './auth/auth/auth.component';
+import { AuthComponent } from './shared/auth/auth.component';
 
 const appRoutes: Routes = [
   {
