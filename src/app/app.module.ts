@@ -15,6 +15,7 @@ import { DropdownDirective } from './components/shared/dropdown.directive';
 import { AppRoutingModule } from './app-routing.module';
 import { RecipesStartComponent } from './components/recipes/recipes-start/recipes-start.component';
 import { RecipesEditComponent } from './components/recipes/recipes-edit/recipes-edit.component';
+import { AuthComponent } from './auth/auth/auth.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { RecipesEditComponent } from './components/recipes/recipes-edit/recipes-
     DropdownDirective,
     RecipesStartComponent,
     RecipesEditComponent,
+    AuthComponent,
   ],
   imports: [
     CommonModule,
