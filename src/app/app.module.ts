@@ -11,7 +11,7 @@ import { ShoppingListComponent } from './pages/shopping-list/shopping-list.compo
 import { ShoppingEditComponent } from './pages/shopping-list/shopping-edit/shopping-edit.component';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { DropdownDirective } from './pages/shared/dropdown.directive';
+import { DropdownDirective } from './shared/directives/dropdown.directive';
 import { AppRoutingModule } from './app-routing.module';
 import { RecipesStartComponent } from './pages/recipes/recipes-start/recipes-start.component';
 import { RecipesEditComponent } from './pages/recipes/recipes-edit/recipes-edit.component';
