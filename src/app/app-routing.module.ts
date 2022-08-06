@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { RecipesComponent } from './components/recipes/recipes.component';
-import { ShoppingListComponent } from './components/shopping-list/shopping-list.component';
-import { RecipesStartComponent } from './components/recipes/recipes-start/recipes-start.component';
-import { RecipesDetailComponent } from './components/recipes/recipes-detail/recipes-detail.component';
-import { RecipesEditComponent } from './components/recipes/recipes-edit/recipes-edit.component';
-import { RecipesResolverService } from './components/recipes/recipes-resolver.service';
+import { RecipesComponent } from './pages/recipes/recipes.component';
+import { ShoppingListComponent } from './pages/shopping-list/shopping-list.component';
+import { RecipesStartComponent } from './pages/recipes/recipes-start/recipes-start.component';
+import { RecipesDetailComponent } from './pages/recipes/recipes-detail/recipes-detail.component';
+import { RecipesEditComponent } from './pages/recipes/recipes-edit/recipes-edit.component';
+import { RecipesResolverService } from './pages/recipes/recipes-resolver.service';
 import { AuthComponent } from './shared/auth/auth.component';
 
 const appRoutes: Routes = [
