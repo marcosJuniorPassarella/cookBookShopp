@@ -1,7 +1,15 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { environment } from '../../../environments/environment';
-import { catchError, Observable, of, throwError, Subject, tap } from 'rxjs';
+import {
+  catchError,
+  Observable,
+  of,
+  throwError,
+  Subject,
+  tap,
+  BehaviorSubject,
+} from 'rxjs';
 import { User } from '../models/user.model';
 
 export interface AuthResponseData {
@@ -19,7 +27,9 @@ export interface AuthResponseData {
 export class AuthService {
   private signUpUrl = environment.signUpUrl;
   private sigInUrl = environment.signInUrl;
-  user = new Subject<User>();
+  user = new BehaviorSubject<User>(null);
+  // behaviorSubject é um Subject que permite que o último valor seja retornado sempre que o observable for chamado
+  // então mesmo não ter inscrito no observable no momento que o valor foi passado, o último valor será retornado
 
   constructor(private http: HttpClient) {}
 
