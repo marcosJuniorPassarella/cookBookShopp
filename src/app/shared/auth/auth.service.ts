@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { environment } from '../../../environments/environment';
 import { catchError, Observable, of, throwError, Subject, tap } from 'rxjs';
-import { User } from './user.model';
+import { User } from '../models/user.model';
 
 export interface AuthResponseData {
   idToken: string;
