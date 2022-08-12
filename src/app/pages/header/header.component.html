@@ -28,7 +28,12 @@
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li>
-          <a style="cursor: pointer" *ngIf="isAuthenticated">Logout</a>
+          <a
+            style="cursor: pointer"
+            *ngIf="isAuthenticated"
+            (click)="onLogout()"
+            >Logout</a
+          >
         </li>
         <li class="dropdown" appDropdown *ngIf="isAuthenticated">
           <a style="cursor: pointer" class="dropdown-toggle" role="button"
