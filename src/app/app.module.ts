@@ -18,6 +18,7 @@ import { RecipesStartComponent } from './pages/recipes/recipes-start/recipes-sta
 import { RecipesEditComponent } from './pages/recipes/recipes-edit/recipes-edit.component';
 import { AuthComponent } from './shared/auth/auth.component';
 import { LoadingSpinnerComponent } from './shared/components/loading-spinner/loading-spinner.component';
+import { AlertComponent } from './shared/components/alert/alert.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { LoadingSpinnerComponent } from './shared/components/loading-spinner/loa
     RecipesEditComponent,
     AuthComponent,
     LoadingSpinnerComponent,
+    AlertComponent,
   ],
   imports: [
     CommonModule,
