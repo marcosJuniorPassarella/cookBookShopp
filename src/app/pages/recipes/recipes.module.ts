@@ -17,5 +17,13 @@ import { RecipesComponent } from './recipes.component';
     RecipesEditComponent,
   ],
   imports: [CommonModule],
+  exports: [
+    RecipesComponent,
+    RecipesListComponent,
+    RecipesDetailComponent,
+    RecipesItemComponent,
+    RecipesStartComponent,
+    RecipesEditComponent,
+  ],
 })
 export class RecipesModule {}

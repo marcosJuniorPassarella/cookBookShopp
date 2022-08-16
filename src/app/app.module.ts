@@ -6,34 +6,23 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { AuthInterceptorService } from './shared/auth/auth-interceptor.service';
 import { HeaderComponent } from './pages/header/header.component';
-import { RecipesComponent } from './pages/recipes/recipes.component';
-import { RecipesListComponent } from './pages/recipes/recipes-list/recipes-list.component';
-import { RecipesDetailComponent } from './pages/recipes/recipes-detail/recipes-detail.component';
-import { RecipesItemComponent } from './pages/recipes/recipes-list/recipes-item/recipes-item.component';
 import { ShoppingListComponent } from './pages/shopping-list/shopping-list.component';
 import { ShoppingEditComponent } from './pages/shopping-list/shopping-edit/shopping-edit.component';
 import { DropdownDirective } from './shared/directives/dropdown.directive';
 import { AppRoutingModule } from './app-routing.module';
-import { RecipesStartComponent } from './pages/recipes/recipes-start/recipes-start.component';
-import { RecipesEditComponent } from './pages/recipes/recipes-edit/recipes-edit.component';
 import { AuthComponent } from './shared/auth/auth.component';
 import { LoadingSpinnerComponent } from './shared/components/loading-spinner/loading-spinner.component';
 import { AlertComponent } from './shared/components/alert/alert.component';
 import { PlaceholderDirective } from './shared/directives/placeholder.directive';
+import { RecipesModule } from './pages/recipes/recipes.module';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    RecipesComponent,
-    RecipesListComponent,
-    RecipesDetailComponent,
-    RecipesItemComponent,
     ShoppingListComponent,
     ShoppingEditComponent,
     DropdownDirective,
-    RecipesStartComponent,
-    RecipesEditComponent,
     AuthComponent,
     LoadingSpinnerComponent,
     AlertComponent,
@@ -46,6 +35,7 @@ import { PlaceholderDirective } from './shared/directives/placeholder.directive'
     ReactiveFormsModule,
     HttpClientModule,
     AppRoutingModule,
+    RecipesModule,
   ],
   providers: [
     {
