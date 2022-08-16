@@ -21,6 +21,7 @@ import { SharedModule } from '../../shared/shared.module';
     RecipesEditComponent,
   ],
   imports: [
+    CommonModule,
     RouterModule,
     ReactiveFormsModule,
     RecipesRoutingModule,
