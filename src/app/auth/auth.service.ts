@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
-import { environment } from '../../../environments/environment';
 import {
   catchError,
   Observable,
@@ -10,8 +9,9 @@ import {
   tap,
   BehaviorSubject,
 } from 'rxjs';
-import { User } from '../models/user.model';
 import { Router } from '@angular/router';
+import { environment } from 'src/environments/environment';
+import { User } from '../shared/models/user.model';
 
 export interface AuthResponseData {
   idToken: string;
