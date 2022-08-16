@@ -1,26 +1,24 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
+import { CommonModule } from '@angular/common';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
-import { RecipesModule } from './pages/recipes/recipes.module';
-import { ShoppingListModule } from './pages/shopping-list/shopping-list.module';
-import { SharedModule } from './shared/shared.module';
 import { CoreModule } from './core.module';
+import { SharedModule } from './shared/shared.module';
 import { HeaderComponent } from './pages/header/header.component';
 import { AuthModule } from './auth/auth.module';
 
 @NgModule({
   declarations: [AppComponent, HeaderComponent],
   imports: [
+    CommonModule,
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
-    RecipesModule,
-    ShoppingListModule,
     SharedModule,
-    CoreModule,
     AuthModule,
+    CoreModule,
   ],
   bootstrap: [AppComponent],
 })
