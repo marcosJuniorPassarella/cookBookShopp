@@ -19,6 +19,7 @@ import { RecipesEditComponent } from './pages/recipes/recipes-edit/recipes-edit.
 import { AuthComponent } from './shared/auth/auth.component';
 import { LoadingSpinnerComponent } from './shared/components/loading-spinner/loading-spinner.component';
 import { AlertComponent } from './shared/components/alert/alert.component';
+import { PlaceholderDirective } from './shared/directives/placeholder.directive';
 
 @NgModule({
   declarations: [
@@ -36,6 +37,7 @@ import { AlertComponent } from './shared/components/alert/alert.component';
     AuthComponent,
     LoadingSpinnerComponent,
     AlertComponent,
+    PlaceholderDirective,
   ],
   imports: [
     CommonModule,

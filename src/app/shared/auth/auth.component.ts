@@ -1,20 +1,35 @@
-import { Component, OnInit } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  ViewChild,
+  ViewContainerRef,
+  OnDestroy,
+} from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { AuthService, AuthResponseData } from './auth.service';
-import { Observable } from 'rxjs';
+import { Observable, Subscription } from 'rxjs';
 import { Router } from '@angular/router';
+import { AlertComponent } from '../components/alert/alert.component';
+import { PlaceholderDirective } from '../directives/placeholder.directive';
 
 @Component({
   selector: 'app-auth',
   templateUrl: './auth.component.html',
   styleUrls: [],
 })
-export class AuthComponent implements OnInit {
+export class AuthComponent implements OnInit, OnDestroy {
+  private closeSub!: Subscription;
+  @ViewChild(PlaceholderDirective, { static: false })
+  alertHost: PlaceholderDirective;
   isLoginMode = true;
   isLoading = false;
   error: string = null;
 
-  constructor(private authService: AuthService, private router: Router) {}
+  constructor(
+    private authService: AuthService,
+    private router: Router,
+    private viewContainerRef: ViewContainerRef
+  ) {}
 
   ngOnInit(): void {}
 
@@ -45,6 +60,7 @@ export class AuthComponent implements OnInit {
       },
       error: (err) => {
         this.error = err;
+        this.showErrorAlert(err);
         this.isLoading = false;
       },
     });
@@ -53,5 +69,22 @@ export class AuthComponent implements OnInit {
 
   onHandleError(): void {
     this.error = null;
+  }
+
+  private showErrorAlert(message: string): void {
+    const hostViewContainerRef = this.alertHost.viewCRef;
+    hostViewContainerRef.clear();
+    const componentRef = hostViewContainerRef.createComponent(AlertComponent);
+    componentRef.instance.message = message;
+    this.closeSub = componentRef.instance.close.subscribe({
+      next: () => {
+        this.closeSub.unsubscribe();
+        hostViewContainerRef.clear();
+      },
+    });
+  }
+
+  ngOnDestroy(): void {
+    this.closeSub && this.closeSub.unsubscribe();
   }
 }
