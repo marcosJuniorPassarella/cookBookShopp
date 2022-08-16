@@ -6,25 +6,14 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { AuthInterceptorService } from './shared/auth/auth-interceptor.service';
 import { HeaderComponent } from './pages/header/header.component';
-import { DropdownDirective } from './shared/directives/dropdown.directive';
 import { AppRoutingModule } from './app-routing.module';
 import { AuthComponent } from './shared/auth/auth.component';
-import { LoadingSpinnerComponent } from './shared/components/loading-spinner/loading-spinner.component';
-import { AlertComponent } from './shared/components/alert/alert.component';
-import { PlaceholderDirective } from './shared/directives/placeholder.directive';
 import { RecipesModule } from './pages/recipes/recipes.module';
 import { ShoppingListModule } from './pages/shopping-list/shopping-list.module';
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    HeaderComponent,
-    DropdownDirective,
-    AuthComponent,
-    LoadingSpinnerComponent,
-    AlertComponent,
-    PlaceholderDirective,
-  ],
+  declarations: [AppComponent, HeaderComponent, AuthComponent],
   imports: [
     CommonModule,
     BrowserModule,
@@ -34,6 +23,7 @@ import { ShoppingListModule } from './pages/shopping-list/shopping-list.module';
     AppRoutingModule,
     RecipesModule,
     ShoppingListModule,
+    SharedModule,
   ],
   providers: [
     {
