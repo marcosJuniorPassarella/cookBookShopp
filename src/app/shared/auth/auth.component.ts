@@ -1,10 +1,4 @@
-import {
-  Component,
-  OnInit,
-  ViewChild,
-  ViewContainerRef,
-  OnDestroy,
-} from '@angular/core';
+import { Component, OnInit, ViewChild, OnDestroy } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { AuthService, AuthResponseData } from './auth.service';
 import { Observable, Subscription } from 'rxjs';
@@ -17,7 +11,7 @@ import { PlaceholderDirective } from '../directives/placeholder.directive';
   templateUrl: './auth.component.html',
   styleUrls: [],
 })
-export class AuthComponent implements OnInit, OnDestroy {
+export class AuthComponent implements OnDestroy {
   private closeSub!: Subscription;
   @ViewChild(PlaceholderDirective, { static: false })
   alertHost: PlaceholderDirective;
@@ -25,13 +19,7 @@ export class AuthComponent implements OnInit, OnDestroy {
   isLoading = false;
   error: string = null;
 
-  constructor(
-    private authService: AuthService,
-    private router: Router,
-    private viewContainerRef: ViewContainerRef
-  ) {}
-
-  ngOnInit(): void {}
+  constructor(private authService: AuthService, private router: Router) {}
 
   onSwitchMode(): void {
     this.isLoginMode = !this.isLoginMode;
