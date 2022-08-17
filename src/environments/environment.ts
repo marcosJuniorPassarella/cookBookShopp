@@ -4,12 +4,13 @@
 
 export const environment = {
   production: false,
+  firebaseAPIKey: 'AIzaSyAnjQHvMh_-VfSH-fzsoTFhkvKh3F3jhAY',
   firebaseUrl:
     'https://recipe-book-course-a2e6d-default-rtdb.firebaseio.com/recipes.json',
   signUpUrl:
-    'https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyAnjQHvMh_-VfSH-fzsoTFhkvKh3F3jhAY',
+    'https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=',
   signInUrl:
-    'https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyAnjQHvMh_-VfSH-fzsoTFhkvKh3F3jhAY',
+    'https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=',
 };
 
 /*

@@ -1,14 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
-import {
-  catchError,
-  Observable,
-  of,
-  throwError,
-  Subject,
-  tap,
-  BehaviorSubject,
-} from 'rxjs';
+import { catchError, Observable, throwError, tap, BehaviorSubject } from 'rxjs';
 import { Router } from '@angular/router';
 import { environment } from 'src/environments/environment';
 import { User } from '../shared/models/user.model';
@@ -28,6 +20,7 @@ export interface AuthResponseData {
 export class AuthService {
   private signUpUrl = environment.signUpUrl;
   private sigInUrl = environment.signInUrl;
+  private firebaseAPIKey = environment.firebaseAPIKey;
   private tokenExpirationTimer: any;
   user = new BehaviorSubject<User>(null);
   // behaviorSubject é um Subject que permite que o último valor seja retornado sempre que o observable for chamado
@@ -37,7 +30,7 @@ export class AuthService {
 
   signUp(email: string, password: string): Observable<AuthResponseData> {
     return this.http
-      .post<AuthResponseData>(this.signUpUrl, {
+      .post<AuthResponseData>(this.signUpUrl + this.firebaseAPIKey, {
         email: email,
         password: password,
         returnSecureToken: true,
@@ -59,7 +52,7 @@ export class AuthService {
 
   login(email: string, password: string): Observable<AuthResponseData> {
     return this.http
-      .post<AuthResponseData>(this.sigInUrl, {
+      .post<AuthResponseData>(this.sigInUrl + this.firebaseAPIKey, {
         email: email,
         password: password,
         returnSecureToken: true,
