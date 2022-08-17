@@ -1,5 +1,7 @@
 # Cookbookshopp
 
+Visit the aplication now: https://recipe-book-course-a2e6d.web.app/auth
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.1.
 
 ## Development server
