@@ -20,6 +20,21 @@ export function shoppingListReducer(
         ...state,
         ingredients: [...state.ingredients, ...action.payload],
       };
+    case ShoppingListActions.UPDATE_INGREDIENT:
+      const ingredient = state.ingredients[action.payload.index];
+      const updateIngredient = {
+        ...ingredient,
+        ...action.payload.ingredient,
+      };
+      const updatedIngredients = [...state.ingredients];
+      updatedIngredients[action.payload.index] = updateIngredient;
+
+      return {
+        ...state,
+        ingredients: updatedIngredients,
+      };
+    case ShoppingListActions.DELETE_INGREDIENT:
+      return {};
     default:
       return state;
   }
