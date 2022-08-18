@@ -1,6 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { Observable, Subscription } from 'rxjs';
+import { Observable } from 'rxjs';
 import { Ingredient } from '../../shared/models/ingredients.model';
 import { ShoppingListService } from './shopping-list.service';
 
@@ -10,7 +10,6 @@ import { ShoppingListService } from './shopping-list.service';
   styleUrls: ['./shopping-list.component.scss'],
 })
 export class ShoppingListComponent implements OnInit {
-  private igChangeSub$: Subscription;
   ingredients!: Observable<{ ingredients: Ingredient[] }>;
 
   constructor(
