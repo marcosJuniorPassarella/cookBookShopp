@@ -25,3 +25,9 @@ export class UpdateIngredient implements Action {
 
   constructor(public payload: { index: number; ingredient: Ingredient }) {}
 }
+
+export class DeleteIngredient implements Action {
+  readonly type = DELETE_INGREDIENT;
+
+  constructor(public payload: number) {}
+}
