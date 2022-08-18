@@ -6,7 +6,11 @@ export const ADD_INGREDIENTS = 'ADD_INGREDIENTS';
 export const UPDATE_INGREDIENT = 'UPDATE_INGREDIENT';
 export const DELETE_INGREDIENT = 'DELETE_INGREDIENT';
 
-export type ShoppingListActions = AddIngredient | AddIngredients;
+export type ShoppingListActions =
+  | AddIngredient
+  | AddIngredients
+  | UpdateIngredient
+  | DeleteIngredient;
 
 export class AddIngredient implements Action {
   readonly type = ADD_INGREDIENT;
