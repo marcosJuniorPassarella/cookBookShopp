@@ -35,31 +35,35 @@ export function shoppingListReducer(
       };
 
     case ShoppingListActions.UPDATE_INGREDIENT:
-      const ingredient = state.ingredients[action.payload.index];
+      const ingredient = state.ingredients[state.editedIngredientIndex];
       const updateIngredient = {
         ...ingredient,
-        ...action.payload.ingredient,
+        ...action.payload,
       };
       const updatedIngredients = [...state.ingredients];
-      updatedIngredients[action.payload.index] = updateIngredient;
+      updatedIngredients[state.editedIngredientIndex] = updateIngredient;
 
       return {
         ...state,
         ingredients: updatedIngredients,
+        editedIngredientIndex: -1,
+        editedIngredient: null,
       };
 
     case ShoppingListActions.DELETE_INGREDIENT:
       return {
         ...state,
         ingredients: state.ingredients.filter(
-          (ig, igIndex) => igIndex !== action.payload
+          (ig, igIndex) => igIndex !== state.editedIngredientIndex
         ),
+        editedIngredientIndex: -1,
+        editedIngredient: null,
       };
     case ShoppingListActions.START_EDIT:
       return {
         ...state,
-        editedIngredientsIndex: action.payload,
-        editedIngredient: { ...state.ingredients[action.payload] },
+        editedIngredientIndex: action.payload,
+        editedIngredient: { ...state.ingredients[action.payload] }
       };
     case ShoppingListActions.STOP_EDIT:
       return {
