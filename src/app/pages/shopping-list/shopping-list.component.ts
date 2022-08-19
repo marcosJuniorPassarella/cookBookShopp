@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { ShoppingListService } from './shopping-list.service';
 import { Ingredient } from 'src/app/shared/models/ingredients.model';
 import * as fromShoppingList from './store/shopping-list.reducer';
+import * as ShoppingListActions from './store/shopping-list.actions';
 
 @Component({
   selector: 'app-shopping-list',
@@ -13,16 +14,13 @@ import * as fromShoppingList from './store/shopping-list.reducer';
 export class ShoppingListComponent implements OnInit {
   ingredients!: Observable<{ ingredients: Ingredient[] }>;
 
-  constructor(
-    private shoppLService: ShoppingListService,
-    private store: Store<fromShoppingList.AppState>
-  ) {}
+  constructor(private store: Store<fromShoppingList.AppState>) {}
 
   ngOnInit(): void {
     this.ingredients = this.store.select('shoppingListR');
   }
 
   onEditItem(index: number): void {
-    this.shoppLService.startedEditing.next(index);
+    this.store.dispatch(new ShoppingListActions.StartEdit(index));
   }
 }
