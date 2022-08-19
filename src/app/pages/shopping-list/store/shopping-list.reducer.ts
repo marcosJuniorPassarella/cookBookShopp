@@ -27,11 +27,13 @@ export function shoppingListReducer(
         ...state,
         ingredients: [...state.ingredients, action.payload],
       };
+
     case ShoppingListActions.ADD_INGREDIENTS:
       return {
         ...state,
         ingredients: [...state.ingredients, ...action.payload],
       };
+
     case ShoppingListActions.UPDATE_INGREDIENT:
       const ingredient = state.ingredients[action.payload.index];
       const updateIngredient = {
@@ -45,12 +47,25 @@ export function shoppingListReducer(
         ...state,
         ingredients: updatedIngredients,
       };
+
     case ShoppingListActions.DELETE_INGREDIENT:
       return {
         ...state,
         ingredients: state.ingredients.filter(
           (ig, igIndex) => igIndex !== action.payload
         ),
+      };
+    case ShoppingListActions.START_EDIT:
+      return {
+        ...state,
+        editedIngredientsIndex: action.payload,
+        editedIngredient: { ...state.ingredients[action.payload] },
+      };
+    case ShoppingListActions.STOP_EDIT:
+      return {
+        ...state,
+        editedIngredient: null,
+        editedIngredientIndex: -1,
       };
     default:
       return state;
