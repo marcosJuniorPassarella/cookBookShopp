@@ -12,7 +12,9 @@ export type ShoppingListActions =
   | AddIngredient
   | AddIngredients
   | UpdateIngredient
-  | DeleteIngredient;
+  | DeleteIngredient
+  | StartEdit
+  | StopEdit;
 
 export class AddIngredient implements Action {
   readonly type = ADD_INGREDIENT;
