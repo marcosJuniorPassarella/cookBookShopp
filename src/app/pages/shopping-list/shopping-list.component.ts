@@ -22,5 +22,6 @@ export class ShoppingListComponent implements OnInit {
 
   onEditItem(index: number): void {
     this.store.dispatch(new ShoppingListActions.StartEdit(index));
+    console.log(index);
   }
 }
