@@ -8,4 +8,6 @@ const initialState: State = {
   user: null,
 };
 
-export function authReducer(state = initialState, action) {}
+export function authReducer(state = initialState, action) {
+  return state;
+}
