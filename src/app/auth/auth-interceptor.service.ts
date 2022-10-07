@@ -4,8 +4,8 @@ import {
   HttpHandler,
   HttpInterceptor,
   HttpRequest,
+  HttpParams
 } from '@angular/common/http';
-import { HttpParams } from '@angular/common/http';
 import { Store } from '@ngrx/store';
 import { exhaustMap, map, Observable, take } from 'rxjs';
 import * as fromApp from '../store/app.reducer';

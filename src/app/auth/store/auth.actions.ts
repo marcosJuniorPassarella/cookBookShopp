@@ -1,5 +1,4 @@
 import { Action } from '@ngrx/store';
-import { type } from 'os';
 
 export const LOGIN = 'LOGIN';
 export const LOGOUT = 'LOGOUT';

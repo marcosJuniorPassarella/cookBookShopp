@@ -25,7 +25,7 @@ export class AuthService {
   private sigInUrl = environment.signInUrl;
   private firebaseAPIKey = environment.firebaseAPIKey;
   private tokenExpirationTimer: any;
-  user = new BehaviorSubject<User>(null);
+  //user = new BehaviorSubject<User>(null);
   // behaviorSubject é um Subject que permite que o último valor seja retornado sempre que o observable for chamado
   // então mesmo não ter inscrito no observable no momento que o valor foi passado, o último valor será retornado
 
